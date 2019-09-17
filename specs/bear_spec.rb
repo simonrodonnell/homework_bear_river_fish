@@ -20,26 +20,31 @@ class BearTest < Minitest::Test
   end
 
   def test_bear_has_name
-    bear = Bear.new("Fozzy", "Teddy Bear")
-    assert_equal("Fozzy", bear.name())
+    bear = Bear.new("Fozzie", "Teddy Bear")
+    assert_equal("Fozzie", bear.name())
   end
 
   def test_bear_has_type
-    bear = Bear.new("Fozzy", "Teddy Bear")
+    bear = Bear.new("Fozzie", "Teddy Bear")
     assert_equal("Teddy Bear", bear.type())
   end
 
   def test_get_stomach_contents()
-    bear = Bear.new("Fozzy", "Teddy Bear")
+    bear = Bear.new("Fozzie", "Teddy Bear")
     assert_equal(0, bear.food_count)
   end
 
   def test_bear_takes_fish()
-    bear = Bear.new("Fozzy", "Teddy Bear")
+    bear = Bear.new("Fozzie", "Teddy Bear")
     bear.takes_fish(@fish5)
     @river1.loses_fish(@fish5)
     assert_equal(1, bear.food_count())
     assert_equal(4, @river1.fish_count())
+  end
+
+  def test_bear_roar
+    bear = Bear.new("Fozzie", "Teddy Bear")
+    assert_equal("Rawr!", bear.roar())
   end
 
 end
