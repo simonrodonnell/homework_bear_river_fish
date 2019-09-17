@@ -12,4 +12,12 @@ class Bear
     return @stomach
   end
 
+  def food_count()
+    return @stomach.length()
+  end
+
+  def takes_fish(fish)
+    @stomach.push(fish)
+  end
+
 end
